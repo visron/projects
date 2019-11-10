@@ -1,16 +1,13 @@
 <?php
 @session_start();
-//require_once('Connections/config.php');
-//require_once('Connections/config_orcl.php');
 require_once('classes/ListDisplay.class.php');
 $list = new listDisplay();
-?>
-<?php include_once('header.php'); ?>
+ include_once('header.php'); ?>
 <div id="content-wrapper">
     <ul class="breadcrumb breadcrumb-page">
         <div class="breadcrumb-label text-light-gray">You are here: </div>
         <li><a href="index.php">Home</a></li>
-        <li><a href="#">User Managment</a></li>
+        <li><a href="#">User Management</a></li>
         <li class="active"><a href="#">System Users</a></li>
     </ul>
     <div class="row">
@@ -19,7 +16,7 @@ $list = new listDisplay();
                 <div class="panel-heading">
                     <span class="panel-title">System Users</span>
                 </div>
-                <div><a href="newuser.php" class="btn btn-primary ajax-link">New User</a>&nbsp;</div>
+                <div><a href="new_user.php" class="btn btn-primary ajax-link">New User</a>&nbsp;</div>
                 </br>
                 <div class="table-warning">
                     <?php
@@ -27,7 +24,7 @@ $list = new listDisplay();
                     if (isset($_GET['page'])) {
                         $current_page = $_GET['page'];
                     }
-                    $total_rows = $list->count_rows('users', ' WHERE user_isvisible = 1');
+                    $total_rows = $list->count_rows('users', ' WHERE U_STATUS = 1');
                     $rows_per_page = 15;
                     $total_pages = $list->total_pages($total_rows, $rows_per_page);
                     $start_row = $list->page_to_row($current_page, $rows_per_page);
@@ -38,14 +35,12 @@ $list = new listDisplay();
                             <tr>
                                 <th width="193">Name</th>
                                 <th width="100">Username</th>
-                                <th width="105">Date Created</th>
-                                <th width="86">Role</th>
                                 <th width="283">Actions</th>
                             </tr>
                         </thead>   
                         <tbody>
                             <?php
-                            $items = $list->paged_result($start_row, $rows_per_page, 'users', ' WHERE user_isvisible = 1');
+                            $items = $list->paged_result($start_row, $rows_per_page, 'users', ' WHERE U_STATUS = 1');
                             $count = count($items);
 
                             if ($count == 0) {
@@ -55,19 +50,16 @@ $list = new listDisplay();
                                 $conf = "if(confirm('Please confirm you want to delete this item')){ return true;}else{return false;}";
                                 foreach ($items as $it) {
 
-                                    @$role = $admin->getRoleByID($it['AR_ID']);
                                     echo '<tr>
-								<td>' . $it['FIRSTNAME'] . " " . $it['SURNAME'] . '</td>
-								<td>' . $it['USERNAME'] . '</td>
-								<td class="center">' . date('d-m-Y', strtotime($it['USER_DATE'])) . '</td>
-								<td class="center">' . $role['AR_NAME'] . '
+								<td>' . $it['U_NAME'].'</td>
+								<td>' . $it['U_FNAME'] . '</td>
 								</td>
 								<td class="center">
-									<a class="btn btn-info" href="editadmin.php?id=' . $it['USER_ID'] . '">
+									<a class="btn btn-info" href="editadmin.php?id=' . $it['U_ID'] . '">
 										<i class="fa fa-edit icon-white"></i>  
 										Edit											
 									</a>
-									<a onClick="' . $conf . '" class="btn btn-danger" href="exec/auth-exec.php?tag=deleteadmin&id=' . $it['USER_ID'] . '">
+									<a onClick="' . $conf . '" class="btn btn-danger" href="exec/auth-exec.php?tag=deleteadmin&id=' . $it['U_ID'] . '">
 										<i class="fa fa-trash-o icon-white"></i> 
 										Delete
 									</a>
@@ -85,7 +77,7 @@ $list = new listDisplay();
     <script>
         init.push(function () {
             $('#jq-datatables-example').dataTable();
-            $('#jq-datatables-example_wrapper .table-caption').text('System Groups');
+            $('#jq-datatables-example_wrapper .table-caption').text('Users');
             $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Search...');
         });
     </script>

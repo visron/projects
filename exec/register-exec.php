@@ -1,7 +1,10 @@
 <?php
-include_once("../signupdb.php");
+//include_once("../classes/signupdb.php");
+include_once("../classes/Admins.class.php");
+
 //include_once("OAuth.php");
-$signupdb = new signupdb();
+//$signupdb = new signupdb();
+$admin = new Admin();
 if(isset($_GET['tag'])){
 	$tag = $_GET['tag'];
 }
@@ -13,19 +16,22 @@ else{
 }
 switch($tag){
 		case 'newuser':
-	$username = $_POST['email'];
+	$firstname = $_POST['firstname'];
+	$surname = $_POST['surname'];
+	$username = $_POST['username'];
+	$email = $_POST['email'];
 	if(isset($_POST['phone'])){
 		$phone = $_POST['phone'];
 
 	}else{
 		$phone = '';
 	}
-	$create = $signupdb->createuser($username,$password,$fname,$lname,$email,$phone);
+	$create = $admin->create_user($firstname, $surname, $username, $email, $phone);
 	if($create){
 
 	   $_SESSION['status']='pass';
-	   $_SESSION['msg']='Your Account has been created!';
-	   header("location:../login.php");
+	   $_SESSION['msg']='User has been created!';
+	   header("location:../users.php");
 	   exit;
 
 	}
@@ -42,7 +48,7 @@ switch($tag){
 	$userpassword = $_REQUEST['password'];
        // echo $username."<pass ".$userpassword;
        
-	$create = $signupdb->login($username,$userpassword);
+	$create = $admin->login_admin($username,$userpassword);
 	if($create){
 	   $_SESSION['status']='pass';
 	   $_SESSION['msg']='Login Successful';

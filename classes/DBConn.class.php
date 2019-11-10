@@ -1,6 +1,4 @@
-
 <?php
-
 @session_start();
 @error_reporting(E_ALL);
 @ini_set('display_errors', TRUE);
@@ -18,7 +16,7 @@ class DBConn {
         $DB_SERVER = 'localhost';
         $DB_USERNAME = 'rot';
         $DB_PASSWORD = '';
-        $DB_DATABASE = 'projects';
+        $DB_DATABASE = 'tasks';
         $this->DBdate = date('Y-m-d H:i:s', strtotime('now'));
         $connection = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD) or
         die('Oops connection error -> ' . mysqli_connect_error());

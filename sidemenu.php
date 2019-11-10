@@ -1,5 +1,5 @@
 r<!-- 4. $MAIN_MENU =================================================================================-->
-<div id="main-menu" role="navigation">
+<div id="main-menu" role="navigation" >
     <div id="main-menu-inner">
         <ul class="navigation">
             <li>
@@ -12,11 +12,10 @@ r<!-- 4. $MAIN_MENU ============================================================
                 <a href="#"><i class="menu-icon fa fa-users"></i><span class="mm-text">Project management</span></a>
                 <ul>
                     <li>
-                        <a tabindex="-1" href="inpatients.php"><span class="mm-text">Progress Tracker</span></a>
+                        <a tabindex="-1" href="projects.php"><span class="mm-text">Progress Tracker</span></a>
                     </li>
-                    <li>
-                        <a tabindex="-1" href="outpatients.php"><span class="mm-text">New Proposals</span></a>
-                    </li>
+                    
+                   
                 </ul>
             </li>
             <li>

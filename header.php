@@ -8,8 +8,6 @@ $status = 1;
 $curPage = curPage();
 
 require_once('classes/Admins.class.php');
-require_once('classes/Notificationizer.class.php');
-$ntf = new Notificationizer();
 $admin = new Admin();
 
 if (isset($_GET['logout'])) {
@@ -18,9 +16,10 @@ if (isset($_GET['logout'])) {
         header('location:login.php');
     }
 }
-if (!$admin->checkLogin()) {
-    header('location:login.php');
-}
+//if (!$admin->checkLogin()) {
+//    header('location:login.php');
+//    exit();
+//}
 //@$roleID = $admin->getRoleById($_SESSION['TYPE']);
 //$loggedInUsersInfo = $admin->getAdminInfo($_SESSION['UID']);
 //$notifications = $ntf->fetchNotifications($_SESSION['UID']);
@@ -77,7 +76,7 @@ Use search to find needed section.
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>ITECH</title>
+        <title>My TECH</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
         <!-- Open Sans font from Google CDN -->
@@ -107,26 +106,29 @@ Use search to find needed section.
         <!-- Demo script --> <script src="assets/demo/demo.js"></script> <!-- / Demo script -->
         <div id="main-wrapper">
             <!-- 2. $MAIN_NAVIGATION =====================================Main navigation-->
-            <div id="main-navbar" class="navbar navbar-inverse" role="navigation">
+            <div id="main-navbar" class="navbar navbar-inverse" 
+" role="navigation">
                 <!-- Main menu toggle -->
-                <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">HIDE MENU</span></button>
-                <div class="navbar-inner">
+                <button type="button" id="main-menu-toggle" STYLE="background:#33ccff;"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">HIDE MENU</span></button>
+                <div class="navbar-inner" >
                     <!-- Main navbar header -->
-                    <div class="navbar-header">
+                    <div class="navbar-header"STYLE="background: #33ccff;" >
                         <!-- Logo -->
-                        <a href="index.php" class="navbar-brand">
-                            <strong>ITECH</strong>PROJECT 
+                        <a href="index.php"  class="navbar-brand">
+                            <strong>My TECH</strong> PROJECTs 
                         </a>
                         <!-- Main navbar toggle -->
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
                     </div> <!-- / .navbar-header -->
 
-                    <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
+                    <div id="main-navbar-collapse" style="background: linear-gradient(to bottom right, #33ccff 5%, #ccff99 85%);
+" class="collapse navbar-collapse main-navbar-collapse">
                         <div>
                             <ul class="nav navbar-nav">
                                 <li>
                                     <a href="index.php">Home</a>
                                 </li>
+                                
                             </ul> <!-- / .navbar-nav -->
 
                             <div class="right clearfix">
@@ -147,7 +149,14 @@ Use search to find needed section.
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
                                             <img src="assets/demo/avatars/1.jpg" alt="">
-                                            <span><?php echo $_SESSION['FIRSTNAME']; ?></span>
+                                            <span>
+                                                <?php 
+//                                                if(isset($_SESSION['FIRSTNAME'])){   
+//                                                echo $_SESSION['FIRSTNAME'];         
+//                                                }else{
+                                                echo "ADMIN";
+                                            //} 
+                                            ?></span>
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a href="user_profile.php"><i class="dropdown-icon fa fa-cogs"></i>&nbsp;&nbsp;Profile</a></li>
