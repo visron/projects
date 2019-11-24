@@ -2,6 +2,8 @@
 include 'header.php';
 require_once('classes/ListDisplay.class.php');
 $list = new listDisplay();
+require_once('classes/Admins.class.php');
+$admin = new Admin();
 ?>
 <div id="content-wrapper">
     <ul class="breadcrumb breadcrumb-page">
@@ -35,14 +37,22 @@ $list = new listDisplay();
                             <tr>
                                 <th width="193">Name</th>
                                 <th width="100">Progress</th>
-                                <th width="105">Time</th>
+                                <th width="105">Date Start</th>
                                 <th width="86">Status</th>
+                                <th width="86">Users</th>
+
                                 <th width="283">Actions</th>
                             </tr>
                         </thead>   
                         <tbody>
                             <?php
-                            $items = $list->paged_result($start_row, $rows_per_page, 'tasks', ' WHERE T_STATUS = 1');
+                            if(isset($_REQUEST['id'])){
+                                $id =$_REQUEST['id'];
+                            $items = $list->paged_result($start_row, $rows_per_page, 'tasks', "WHERE T_STATUS = 1 AND P_ID = '$id'");
+                            }else{
+                            $items = $list->paged_result($start_row, $rows_per_page, 'tasks', "WHERE T_STATUS = 1");
+                                
+                            }
                             $count = count($items);
 
                             if ($count == 0) {
@@ -51,19 +61,26 @@ $list = new listDisplay();
                             } else {
                                 $conf = "if(confirm('Please confirm you want to delete this item')){ return true;}else{return false;}";
                                 foreach ($items as $it) {
-
+                                        if($it['T_STATUS'] == 1){
+                                            $status = "Active";
+                                        }
+                                        if($it['T_PROGRESS'] == 100){
+                                            $status = "Complete";
+                                        }
+                                        $username = $admin->getUsername($it['T_ID'])[0]['U_NAME'];
                                     echo '<tr>
 								<td>' . $it['T_NAME']. '</td>
 								<td>' . $it['T_PROGRESS'] . '</td>
 								<td class="center">' . date('d-m-Y', strtotime($it['T_DATE'])) . '</td>
-								<td class="center">' . $it['T_STATUS'] . '
-								</td>
+								<td class="center">' . $status . '</td>
+								<td class="center">' . $username . '</td>
+                                                                
 								<td class="center">
-									<a class="btn btn-info" href="editadmin.php?id=' . $it['T_ID'] . '">
+									<a class="btn btn-info" href="edit_task.php?id=' . $it['T_ID'] . '">
 										<i class="fa fa-edit icon-white"></i>  
 										Edit											
 									</a>
-									<a onClick="' . $conf . '" class="btn btn-danger" href="exec/auth-exec.php?tag=deleteadmin&id=' . $it['T_ID'] . '">
+									<a onClick="' . $conf . '" class="btn btn-danger" href="exec/task-exec.php?tag=delete&id=' . $it['T_ID'] . '">
 										<i class="fa fa-trash-o icon-white"></i> 
 										Delete
 									</a>

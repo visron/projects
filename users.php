@@ -35,7 +35,7 @@ $list = new listDisplay();
                             <tr>
                                 <th width="193">Name</th>
                                 <th width="100">Username</th>
-                                <th width="283">Actions</th>
+                                <th width="283">Email</th>
                             </tr>
                         </thead>   
                         <tbody>
@@ -53,17 +53,8 @@ $list = new listDisplay();
                                     echo '<tr>
 								<td>' . $it['U_NAME'].'</td>
 								<td>' . $it['U_FNAME'] . '</td>
-								</td>
-								<td class="center">
-									<a class="btn btn-info" href="editadmin.php?id=' . $it['U_ID'] . '">
-										<i class="fa fa-edit icon-white"></i>  
-										Edit											
-									</a>
-									<a onClick="' . $conf . '" class="btn btn-danger" href="exec/auth-exec.php?tag=deleteadmin&id=' . $it['U_ID'] . '">
-										<i class="fa fa-trash-o icon-white"></i> 
-										Delete
-									</a>
-								</td>
+								<td>' . $it['U_EMAIL'] . '</td>
+								
 							</tr>';
                                 }
                             }

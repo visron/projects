@@ -13,6 +13,9 @@
 <!-- LanderApp's javascripts -->
 <script src="assets/javascripts/bootstrap.min.js"></script>
 <script src="assets/javascripts/landerapp.min.js"></script>
+
+
+
 <script type="text/javascript">
 $(document).ready(function(){
 	var status_alert = '<?php echo $alert_msg; 

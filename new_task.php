@@ -1,7 +1,11 @@
 <?php include_once('header.php'); 
-include_once('classes/Tasks.class.php'); 
+include_once('classes/Tasks.class.php');
+include_once('classes/Admins.class.php'); 
+
 $task = new Tasks();
 $taas= $task->getTasks();
+$admin = new Admin();
+$users = $admin->getAllUsers();
 
 ?>
 <div id="content-wrapper">
@@ -57,6 +61,21 @@ $taas= $task->getTasks();
                         </div>
                     </div> 
                    
+                        <div class="form-group">
+                        <label for="project" class="col-sm-2 control-label">Users</label>
+                        <div class="col-sm-10">
+                          <select name="user" class="form-control" id="selectError" data-rel="chosen">
+                          <option value="0">--- Assign User ---</option>
+
+                          <?php
+                                foreach ($users as $user) {
+                                    echo '<option value="' . $user['U_ID'] . '">' . $user['U_NAME'] . '</option>';
+                                }
+                                ?>
+                          </select>
+                        </div>
+                    </div>  
+                    
                     <div class="form-group" style="margin-bottom: 0;">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="col-sm-2 btn btn-info">Submit</button>

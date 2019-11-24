@@ -70,7 +70,7 @@
 
 		<!-- Form -->
 		<div class="signup-form" style="background-color:#00000000;">
-			<form action="register.php" id="signup-form_id" method="post" >
+                    <form action="exec/register-exec.php" id="signup-form_id" method="post" >
 
 				<div class="signup-text">
 					<span>Create an account</span>
@@ -84,11 +84,7 @@
 					<input type="text" name="fname" id="fname_id" class="form-control input-lg" placeholder="Firstname">
 					<span class="fa fa-info signup-form-icon"></span>
 				</div>
-				<div class="form-group w-icon">
-					<input type="text" name="sname" id="name_id" class="form-control input-lg" placeholder="Surname">
-					<span class="fa fa-info signup-form-icon"></span>
-				</div>
-
+				
 				<div class="form-group w-icon">
 					<input type="text" name="email" id="email_id" class="form-control input-lg" placeholder="E-mail">
 					<span class="fa fa-envelope signup-form-icon"></span>
@@ -121,7 +117,7 @@
 
 				<div class="form-actions">
 					<input type="submit" value="SIGN UP" class="signup-btn bg-primary">
-					<input type="hidden" name="tag" value="newuser">
+					<input type="hidden" name="tag" value="newsignup">
 				</div>
 			</form>
 			<!-- / Form -->

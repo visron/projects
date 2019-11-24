@@ -159,8 +159,8 @@ Use search to find needed section.
                                             ?></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="user_profile.php"><i class="dropdown-icon fa fa-cogs"></i>&nbsp;&nbsp;Profile</a></li>
-                                            <li><a href="index.php?logout=true"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
+                                            <!--<li><a href="user_profile.php"><i class="dropdown-icon fa fa-cogs"></i>&nbsp;&nbsp;Profile</a></li>-->
+                                            <!--<li><a href="index.php?logout=true"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>-->
                                         </ul>
                                     </li>
                                 </ul> <!-- / .navbar-nav -->
