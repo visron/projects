@@ -76,7 +76,7 @@ Use search to find needed section.
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>My TECH</title>
+        <title>Carsual</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
         <!-- Open Sans font from Google CDN -->
@@ -115,7 +115,7 @@ Use search to find needed section.
                     <div class="navbar-header"STYLE="background: #33ccff;" >
                         <!-- Logo -->
                         <a href="index.php"  class="navbar-brand">
-                            <strong>My TECH</strong> PROJECTs 
+                            <strong>CAR</strong> Sual 
                         </a>
                         <!-- Main navbar toggle -->
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>

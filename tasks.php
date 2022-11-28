@@ -9,18 +9,18 @@ $admin = new Admin();
     <ul class="breadcrumb breadcrumb-page">
         <div class="breadcrumb-label text-light-gray">You are here: </div>
         <li><a href="index.php">Home</a></li>
-        <li><a href="#">Tasks</a></li>
-        <li class="active"><a href="#">All Tasks</a></li>
+        <li><a href="#">Trips</a></li>
+        <li class="active"><a href="#">All Trips</a></li>
     </ul>
     <div class="row">
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading">
-                    <span class="panel-title">Tasks</span>
+                    <span class="panel-title">Trips</span>
                 </div>
-                <div><a href="new_task.php" class="btn btn-primary ajax-link">New Tasks</a>&nbsp;</div>
+                <div><a href="new_task.php" class="btn btn-primary ajax-link">New Trip</a>&nbsp;</div>
                 </br>
-                <div class="table-warning">
+                <div class="table-light-green">
                     <?php
                     $current_page = 1;
                     if (isset($_GET['page'])) {
@@ -48,9 +48,9 @@ $admin = new Admin();
                             <?php
                             if(isset($_REQUEST['id'])){
                                 $id =$_REQUEST['id'];
-                            $items = $list->paged_result($start_row, $rows_per_page, 'tasks', "WHERE T_STATUS = 1 AND P_ID = '$id'");
+                            $items = $list->paged_result('tasks', "WHERE T_STATUS <> 0 AND P_ID = '$id'");
                             }else{
-                            $items = $list->paged_result($start_row, $rows_per_page, 'tasks', "WHERE T_STATUS = 1");
+                            $items = $list->paged_result('tasks', "WHERE T_STATUS <> 0");
                                 
                             }
                             $count = count($items);

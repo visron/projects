@@ -9,16 +9,16 @@ $task = new Tasks();
     <ul class="breadcrumb breadcrumb-page">
         <div class="breadcrumb-label text-light-gray">You are here: </div>
         <li><a href="index.php">Home</a></li>
-        <li><a href="#">Projects</a></li>
-        <li class="active"><a href="#">All Projects</a></li>
+        <li><a href="#">Trucks</a></li>
+        <li class="active"><a href="#">All Trucks</a></li>
     </ul>
     <div class="row">
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading">
-                    <span class="panel-title">Projects</span>
+                    <span class="panel-title">Trucks</span>
                 </div>
-                <div><a href="new_project.php" class="btn btn-primary ajax-link">New Project</a>&nbsp;</div>
+                <div><a href="new_project.php" class="btn btn-primary ajax-link">New Trucks</a>&nbsp;</div>
                 </br>
                 <div class="table-success">
                     <?php
@@ -45,7 +45,7 @@ $task = new Tasks();
                         </thead>   
                         <tbody>
                             <?php
-                            $items = $list->paged_result($start_row, $rows_per_page, 'project', ' WHERE P_STATUS = 1');
+                            $items = $list->paged_result( "project", " WHERE P_STATUS = 1",$start_row, $rows_per_page);
                             $count = count($items);
 
                             if ($count == 0) {
@@ -62,7 +62,10 @@ $task = new Tasks();
                                    $sum= $task->getTasksSum($it['P_ID']);
                                    $count = $task->getTasksCount($it['P_ID']);
                                    $allcount= $count*100;
+                                   $prog = 0;
+                                   if($count>0){
                                    $prog = $sum/$count;
+                                   }
                                    
                                     echo '<tr>                     <td>' . $it['P_NAME'] . '</td>
 								<td>' . $it['P_DESC'] . '</td>

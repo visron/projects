@@ -59,8 +59,8 @@ public function draw_pager($url, $total_pages, $current_page) {
     }
  
 }
-	public function paged_result($start = null, $end = null, $table,$condition) {
-	   return $this->simpleLazySelect( $table, $condition);
+	public function paged_result($table,$condition,$start = null, $end = null) {
+	   return $this->simpleLazySelect($table, $condition);
 	
 	}
 }

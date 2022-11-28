@@ -16,7 +16,7 @@ class DBConn {
         $DB_SERVER = 'localhost';
         $DB_USERNAME = 'rot';
         $DB_PASSWORD = '';
-        $DB_DATABASE = 'tasks';
+        $DB_DATABASE = 'Towtrucks';
         $this->DBdate = date('Y-m-d H:i:s', strtotime('now'));
         $connection = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD) or
         die('Oops connection error -> ' . mysqli_connect_error());

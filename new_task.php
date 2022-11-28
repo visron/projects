@@ -11,18 +11,18 @@ $users = $admin->getAllUsers();
 <div id="content-wrapper">
     <ul class="breadcrumb breadcrumb-page">
         <li><a href="index.php">Home</a></li>
-        <li><a href="tasks.php">Tasks</a></li>
+        <li><a href="tasks.php">Trips</a></li>
         <li class="active"><a href="#">Add Task</a></li>
     </ul>
     <div class="row">
         <div class="col-md-12">
             <form action="exec/task-exec.php" method="post" class="panel form-horizontal">
                 <div class="panel-heading">
-                    <span class="panel-title">New Task</span>
+                    <span class="panel-title">New Trip</span>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Task Name</label>
+                        <label for="name" class="col-sm-2 control-label">Trip Name</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="name" name="name" required>
                         </div>
@@ -34,7 +34,7 @@ $users = $admin->getAllUsers();
                         </div>
                     </div>-->
                     <div class="form-group">
-                        <label for="status" class="col-sm-2 control-label">Task Status</label>
+                        <label for="status" class="col-sm-2 control-label">Trip Status</label>
                                                 <div class="col-sm-10">
 
                         <select name="status" class="form-control" id="selectError" data-rel="chosen">

@@ -37,7 +37,7 @@ $dash = new Dashboard();
                             <a class="clear" href="tasks.php">
                                <span class="text-bg"><strong><?php echo number_format($dash->getCount('tasks', 'WHERE T_STATUS = 1')); ?></strong></span><br>
                                 
-                                <span class="text-xs">TOTAL TASKS</span>
+                                <span class="text-xs">TOTAL TRIPS</span>
                             </a>
                         </div>
                         
@@ -48,7 +48,7 @@ $dash = new Dashboard();
                         <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
                             <a class="clear" href="projects.php">
                                 <span class="text-bg"><strong><?php echo number_format($dash->getCount('project', 'WHERE P_STATUS = 1')); ?></strong></span><br>
-                                <span class="text-xs">NUMBER OF PROJECTS</span>
+                                <span class="text-xs">NUMBER OF TRUCKS</span>
                             </a>
                         </div>
                          

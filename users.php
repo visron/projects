@@ -40,7 +40,7 @@ $list = new listDisplay();
                         </thead>   
                         <tbody>
                             <?php
-                            $items = $list->paged_result($start_row, $rows_per_page, 'users', ' WHERE U_STATUS = 1');
+                            $items = $list->paged_result('users', ' WHERE U_STATUS = 1');
                             $count = count($items);
 
                             if ($count == 0) {
