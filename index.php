@@ -1,9 +1,9 @@
 <?php
-
-$now = date('Y-M-d');
 include_once('header.php');
+
+$uid = $_SESSION['UID'];
+$now = date('Y-M-d');
 include_once('classes/Dashboard.class.php');
-//$uid = $_SESSION['UID'];
 $dash = new Dashboard();
 //exit;
 //	echo implode(",",$production);
@@ -57,6 +57,7 @@ $dash = new Dashboard();
             </div>
         </div>
      </div> 
+     
    </div>
 
 

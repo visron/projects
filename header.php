@@ -3,7 +3,7 @@
 function curPage() {
     return basename($_SERVER['PHP_SELF']);
 }
-
+@session_start();
 $status = 1;
 $curPage = curPage();
 
@@ -121,7 +121,8 @@ Use search to find needed section.
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
                     </div> <!-- / .navbar-header -->
 
-                    <div id="main-navbar-collapse" style="background: linear-gradient(to bottom right, #33ccff 5%, #ccff99 85%);
+                    <!-- <div id="main-navbar-collapse" style="background: linear-gradient(to bottom right, #33ccff 5%, #ccff99 85%); -->
+                    <div id="main-navbar-collapse" style="background:  #33ccff;
 " class="collapse navbar-collapse main-navbar-collapse">
                         <div>
                             <ul class="nav navbar-nav">
@@ -151,16 +152,16 @@ Use search to find needed section.
                                             <img src="assets/demo/avatars/1.jpg" alt="">
                                             <span>
                                                 <?php 
-//                                                if(isset($_SESSION['FIRSTNAME'])){   
-//                                                echo $_SESSION['FIRSTNAME'];         
-//                                                }else{
-                                                echo "ADMIN";
-                                            //} 
+                                               if(isset($_SESSION['NAME'])){   
+                                               echo $_SESSION['NAME'];         
+                                               }else{
+                                                echo "User";
+                                            } 
                                             ?></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <!--<li><a href="user_profile.php"><i class="dropdown-icon fa fa-cogs"></i>&nbsp;&nbsp;Profile</a></li>-->
-                                            <!--<li><a href="index.php?logout=true"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>-->
+                                            <!-- <li><a href="user_profile.php"><i class="dropdown-icon fa fa-cogs"></i>&nbsp;&nbsp;Profile</a></li> -->
+                                             <li><a href="login.php"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
                                         </ul>
                                     </li>
                                 </ul> <!-- / .navbar-nav -->

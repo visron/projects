@@ -50,17 +50,17 @@
 
         <div id="page-signin-bg">
             <div class="overlay"></div>
-            <img src="assets/images/bg.jpeg" alt="">
+            <img src="assets/images/images.jpg" alt="">
         </div>
         <div class="signin-container">
 
             <div class="signin-info" style="background-color:#00000000;">
                 <a href="#" class="logo" >
-                    <img src="assets/images/c_logo.png" width="100" height="100" alt="">
+                    <img src="assets/images/anulogo.jpg" width="100" height="100" alt="">
                    <!-- My<span style="font-weight:100;">Practice</span>-->
                 </a>
                 <div class="slogan">
-                    I Tech Login
+                    Carsual Login
                 </div>
             </div>
             <div class="signin-form" style="background-color:#00000000;">
@@ -99,8 +99,9 @@
 
                     <div class="form-actions">
                         <input name="tag" type="hidden" value="login" />
+                        <input name="type" type="hidden" value="customer" />
                         <input type="submit" value="SIGN IN" class="signin-btn bg-primary" id="login">
-                        <a href="#" class="forgot-password" id="forgot-password-link">Forgot your password?</a>
+                        <!-- <a href="#" class="forgot-password" id="forgot-password-link">Forgot your password?</a> -->
 
                     </div> <!-- / .form-actions -->
                 </form>
