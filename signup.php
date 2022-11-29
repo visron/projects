@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>ITECH - Sign Up</title>
+	<title>CARSUAL - Sign Up</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&amp;subset=latin" rel="stylesheet" type="text/css">
@@ -60,7 +60,7 @@
 		<!-- Header -->
 		<div class="signup-header" style="background-color:#00000000;">
 			<a href="index.php" class="logo">
-				I TECH SIGNUP<span style="font-weight:100;"> </span>
+				CARSUAL SIGNUP<span style="font-weight:100;"> </span>
 			</a> <!-- / .logo -->
 			<div class="slogan">
 				For you by you.
@@ -118,6 +118,7 @@
 				<div class="form-actions">
 					<input type="submit" value="SIGN UP" class="signup-btn bg-primary">
 					<input type="hidden" name="tag" value="newsignup">
+					<input type="hidden" name="type" value="admin">
 				</div>
 			</form>
 			<!-- / Form -->

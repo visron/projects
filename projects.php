@@ -18,7 +18,7 @@ $task = new Tasks();
                 <div class="panel-heading">
                     <span class="panel-title">Trucks</span>
                 </div>
-                <div><a href="new_project.php" class="btn btn-primary ajax-link">New Trucks</a>&nbsp;</div>
+                <div><a href="new_project.php" class="btn btn-primary ajax-link">New Truck</a>&nbsp;</div>
                 </br>
                 <div class="table-success">
                     <?php
@@ -39,8 +39,8 @@ $task = new Tasks();
                                 <th width="100">Description</th>
                                 <th width="105">Initiate </th>
                                 <th width="86">Status</th>
-                                <th width="86">Progress</th>
-                                <th width="283">Actions</th>
+                                <!-- <th width="86">Progress</th> -->
+                                <!-- <th width="283">Actions</th> -->
                             </tr>
                         </thead>   
                         <tbody>
@@ -71,14 +71,8 @@ $task = new Tasks();
 								<td>' . $it['P_DESC'] . '</td>
 								<td class="center">' . date('d-m-Y', strtotime($it['P_INITIATE_TIME'])) . '</td>
 								<td class="center">' . $activestate . '</td>
-								<td class="center">' . $prog . '</td>
                                                                     
-								<td class="center">
-									<a class="btn btn-warning" href="tasks.php?id=' . $it['P_ID'] . '">
-										<i class="fa fa-eye icon-white"></i>  
-										View											
-									</a>
-								</td>
+								
 							</tr>';
                                 }
                             }
@@ -92,7 +86,7 @@ $task = new Tasks();
     <script>
         init.push(function () {
         $('#jq-datatables-example').dataTable();
-        $('#jq-datatables-example_wrapper .table-caption').text('Tasks');
+        $('#jq-datatables-example_wrapper .table-caption').text('Trucks');
         $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Search...');
         });
     </script>

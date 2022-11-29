@@ -38,13 +38,13 @@ class Admin extends DBConn {
                 return false;
             }
     }
-    function signup($firstname, $username, $email, $phone,$password) {
+    function signup($firstname, $username, $email, $phone,$password,$usertype) {
 //        $checkUser = $this->countLazySelect('users', "WHERE USERNAME ='$username' ");
 //        if ($checkUser == 0) {
 
             $create = $this->lazyInsert('users',
-                array( 'U_FNAME', 'U_NAME', 'U_EMAIL', 'U_PHONE','U_PASSWORD'),
-                array($firstname, $username, $email, $phone,$password));
+                array( 'U_FNAME', 'U_NAME', 'U_EMAIL', 'U_PHONE','U_PASSWORD','U_TYPE'),
+                array($firstname, $username, $email, $phone,$password,$usertype));
             if ($create) {
                 return $create;
                 $this->Log("Created user", '0');
@@ -53,8 +53,8 @@ class Admin extends DBConn {
             }
     }
    
-    function login_admin($un, $pw) {
-        $det = $this->simpleLazySelect('users', "WHERE U_NAME='$un' AND U_STATUS = 1");
+    function login_admin($un, $pw,$usertype) {
+        $det = $this->simpleLazySelect('users', "WHERE U_NAME='$un' AND U_STATUS = 1 AND U_PASSWORD = '$pw' AND U_TYPE='$usertype'");
         $rows = count($det);
         if ($rows == 1) {
             //$isMatch = $this->validate_password($pw, $det[0]['PASSWORD']);
@@ -63,10 +63,8 @@ class Admin extends DBConn {
 //            }
             //else {
                 $_SESSION['UID'] = $det[0]['U_ID'];
-                $_SESSION['FIRSTNAME'] = $det[0]['U_FNAME'];
-                $_SESSION['LASTNAME'] = $det[0]['U_NAME'];
+                $_SESSION['NAME'] = $det[0]['U_NAME'];
                 $_SESSION['PHONE'] = $det[0]['U_PHONE'];
-                $_SESSION['EMAIL'] = $det[0]['U_EMAIL'];
                 $_SESSION["LAST_ACTIVITY"] = $this->DBdate;
                 
                 return $det[0];

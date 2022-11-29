@@ -6,10 +6,14 @@ r<!-- 4. $MAIN_MENU ============================================================
                 <a href="index.php"><i class="menu-icon fa fa-dashboard"></i><span class="mm-text">DASHBOARD</span></a>
             </li>
             <li>
-                <a href="tasks.php"><i class="menu-icon fa fa-users"></i><span class="mm-text">Tow truck Management</span></a>
+                <a href="projects.php"><i class="menu-icon fa fa-users"></i><span class="mm-text">Tow truck Management</span></a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="projects.php"><i class="menu-icon fa fa-users"></i><span class="mm-text">Trip management</span></a>
+               
+            </li> -->
+            <li>
+                <a href="view_requests.php"><i class="menu-icon fa fa-users"></i><span class="mm-text">Customer Requests</span></a>
                
             </li>
             <li>

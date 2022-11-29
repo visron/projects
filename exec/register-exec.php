@@ -46,7 +46,7 @@ switch($tag){
 	$firstname = $_POST['fname'];
 	$username = $_POST['username'];
 	$email = $_POST['email'];
-        	$password = $_POST['password'];
+    $password = md5($_POST['password']);
 
 	if(isset($_POST['phone'])){
 		$phone = $_POST['phone'];
@@ -54,7 +54,9 @@ switch($tag){
 	}else{
 		$phone = '';
 	}
-	$create = $admin->signup($firstname, $username, $email, $phone,$password);
+	$usertype = $_REQUEST['type'];
+
+	$create = $admin->signup($firstname, $username, $email, $phone,$password,$usertype);
 	if($create){
 
 	   $_SESSION['status']='pass';
@@ -73,10 +75,11 @@ switch($tag){
 	case 'login':
            
 	$username = $_REQUEST['username'];
-	$userpassword = $_REQUEST['password'];
+	$userpassword = md5($_REQUEST['password']);
+	$usertype = $_REQUEST['type'];
        // echo $username."<pass ".$userpassword;
        
-	$create = $admin->login_admin($username,$userpassword);
+	$create = $admin->login_admin($username,$userpassword,$usertype);
 	if($create){
 	   $_SESSION['status']='pass';
 	   $_SESSION['msg']='Login Successful';
