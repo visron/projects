@@ -22,21 +22,48 @@ $UID = $_SESSION['UID'];
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Number</label>
+                        <label for="name" class="col-sm-2 control-label">Phone no.</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="number" name="number" required>
+                            <input placeholder="E.g +254722969246" type="text" class="form-control" id="number" name="number" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="from" class="col-sm-2 control-label">From</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="from" name="from" required>
+                        <select class="form-select" name="from" id="from">
+  <option value="Karen">Karen</option>
+  <option value="Rongai">Rongai</option>
+  <option value="Dagoretti">Dagoretti</option>
+  <option value="Langata">Langata</option>
+  <option value="Runda">Runda</option>
+  <option value="Umoja">Umoja</option>
+  <option value="Ruiru">Ruiru</option>
+  <option value="Juja">Juja</option>
+  <option value="Uthiru">Uthiru</option>
+  <option value="Westlands">Westlands</option>
+  <option value="Kasarani">Kasarani</option>
+  <option value="Embakasi">Embakasi</option>
+</select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">To</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="to" name="to" required>
+                        <select class="form-select" name="to" id="to">
+                        <option value="Karen">Karen</option>
+  <option value="Rongai">Rongai</option>
+  <option value="Dagoretti">Dagoretti</option>
+  <option value="Langata">Langata</option>
+  <option value="Runda">Runda</option>
+  <option value="Umoja">Umoja</option>
+  <option value="Ruiru">Ruiru</option>
+  <option value="Juja">Juja</option>
+  <option value="Uthiru">Uthiru</option>
+  <option value="Westlands">Westlands</option>
+  <option value="Kasarani">Kasarani</option>
+  <option value="Embakasi">Embakasi</option>
+</select>
+                        
                         </div>
                     </div>
                     <!-- / .form-group -->

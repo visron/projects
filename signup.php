@@ -51,7 +51,8 @@
 		<!-- Background overlay -->
 		<div class="overlay"></div>
 		<!-- Replace this with your bg image -->
-		<img src="assets/images/bg.jpg" alt="">
+		<img src="assets/images/bg.jpeg"   width="400" 
+     height="1000" />alt="">
 	</div>
 	<!-- / Page background -->
 

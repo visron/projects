@@ -33,31 +33,31 @@ $info = $request->getRequest($id)[0];
 
                             <fieldset>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label" for="name">Customer Name *</label>
+                                    <label class="col-lg-2 control-label" for="name">Customer Name</label>
                                     <div class="col-lg-10">
                                         <input name="name" type="text" class="form-control" id="fname" value="<?php echo $info["Name"] ?>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label" for="name">Customer number *</label>
+                                    <label class="col-lg-2 control-label" for="name">Phone Number</label>
                                     <div class="col-lg-10">
                                         <input name="number" type="number" class="form-control" id="number" value="<?php echo $info["Number"] ?>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label" for="email">PICKUP *</label>
+                                    <label class="col-lg-2 control-label" for="email">PICKUP</label>
                                     <div class="col-lg-10">
                                         <input name="pickup" type="status" class="form-control" id="pickup" value="<?php echo $info["Pickup"] ?>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label" for="email">DESTINATION *</label>
+                                    <label class="col-lg-2 control-label" for="email">DESTINATION</label>
                                     <div class="col-lg-10">
                                         <input name="destination" type="status" class="form-control" id="destination" value="<?php echo $info["Destination"] ?>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label" for="email">Status *</label>
+                                    <label class="col-lg-2 control-label" for="email">Status</label>
                                     <div class="col-lg-10">
                                         <input readonly name="status" type="status" class="form-control" id="status" value="<?php echo $info["Status"] ?>" />
                                     </div>

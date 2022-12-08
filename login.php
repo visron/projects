@@ -50,7 +50,7 @@
 
         <div id="page-signin-bg">
             <div class="overlay"></div>
-            <img src="assets/images/images.jpg" alt="">
+            <img src="assets/images/anulogoo.jpeg" width="500" height="1000"> alt=">
         </div>
         <div class="signin-container">
 
